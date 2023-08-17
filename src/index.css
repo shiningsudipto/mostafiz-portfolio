@@ -4,6 +4,17 @@
 
 /* primary button */
 .primaryBtn{
-    @apply bg-primaryColor text-white font-Josefin py-3 px-8 text-lg rounded-full font-semibold hover:-translate-y-1 hover:bg-secondaryColor;
+    @apply bg-primaryColor text-white font-Josefin py-3 px-10 text-lg rounded-full font-semibold hover:-translate-y-1 hover:bg-secondaryColor;
     transition: transform 0.3s ease; 
+}
+.border-transition {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 3px solid black;
+    transition: border-image 0.3s ease; 
+}
+
+.border-transition:hover {
+    border-image: linear-gradient(to right, #6F34FE, #FF9800); 
+    border-image-slice: 1; 
 }
