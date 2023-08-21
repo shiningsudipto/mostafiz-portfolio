@@ -18,3 +18,11 @@
     border-image: linear-gradient(to right, #6F34FE, #FF9800); 
     border-image-slice: 1; 
 }
+
+.contactIcon{
+    @apply bg-primaryColor p-2 rounded-full text-5xl;
+}
+.contactInfo-details:hover .contactIcon{
+   background-color: #6F34FE; 
+   border: 2px solid #fff;
+}
