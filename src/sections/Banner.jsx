@@ -1,9 +1,10 @@
 import { TypeAnimation } from "react-type-animation";
 import NavigationBar from "../components/NavigationBar";
+import Socials from "../components/Socials";
 
 const Banner = () => {
     return (
-        <div className="bg-[#EFF6FF] w-screen h-screen">
+        <div className="bg-[#EFF6FF] h-screen">
             <div className="container mx-auto">
                 {/* Navbar */}
                 <NavigationBar />
@@ -34,6 +35,7 @@ const Banner = () => {
                             <button className="primaryBtn">Hire ME</button>
                             <p className="border-transition text-primaryColor hover:text-secondaryColor font-semibold text-lg">See My Work</p>
                         </div>
+                        {/* <Socials align={"flex flex-col space-y-4"} /> */}
                     </div>
                     <div></div>
                 </div>
