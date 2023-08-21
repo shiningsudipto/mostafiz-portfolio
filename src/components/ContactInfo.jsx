@@ -10,7 +10,7 @@ const ContactInfo = () => {
         <div className="bg-secondaryColor py-14 px-10 rounded-3xl">
             <div className="text-white space-y-6">
                 <div className="flex items-center contactInfo-details gap-6">
-                    <MdOutlineLocationOn className="contactIcon" />
+                    <MdOutlineLocationOn className="contactIcon w-16" />
                     <div>
                         <h4 className="text-xl font-bold font-Josefin">Address:</h4>
                         <p>121 King Street Melbourne, 3000, Australia</p>
