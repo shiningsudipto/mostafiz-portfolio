@@ -4,7 +4,7 @@ import SectionTitle from "../components/SectionTitle";
 
 const Contact = () => {
     return (
-        <div className="bg-white py-8">
+        <div className="bg-white py-20">
             <div className="container mx-auto ">
                 <SectionTitle
                     title={"Get in Touch"}

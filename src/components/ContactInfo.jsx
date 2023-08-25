@@ -1,6 +1,4 @@
-import locImg from "../assets/contact/location-icon.png"
-import emailImg from "../assets/contact/message-icon.png"
-import phImg from "../assets/contact/phone-icon.png"
+
 import { AiOutlineMail } from "react-icons/ai";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
