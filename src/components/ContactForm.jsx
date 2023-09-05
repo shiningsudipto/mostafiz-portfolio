@@ -1,5 +1,26 @@
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            'service_klw5tdz',
+            'template_neyo0ts',
+            form.current,
+            '15X4dJOwty6rmDxc1')
+            .then((result) => {
+                console.log(result);
+                e.target.reset();
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
+
     return (
         <div>
             <form className="text-textColor">
