@@ -6,7 +6,7 @@ const BlogAddingModal = ({ isOpen, setIsOpen }) => {
         title: '',
         description: '',
         link: '',
-        imageLink: '', // Add the image link field
+        imageLink: '',
     });
 
     const handleChange = (e) => {
