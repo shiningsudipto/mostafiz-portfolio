@@ -9,12 +9,12 @@ const ContactForm = () => {
         e.preventDefault();
 
         emailjs.sendForm(
-            'service_klw5tdz',
-            'template_neyo0ts',
+            'service_3datm0g',
+            'template_jlz7sou',
             form.current,
-            '15X4dJOwty6rmDxc1')
+            'EDCxgQgcjkeILiFUn')
             .then((result) => {
-                console.log(result);
+                console.log(result.text);
                 e.target.reset();
             }, (error) => {
                 console.log(error.text);
@@ -23,7 +23,7 @@ const ContactForm = () => {
 
     return (
         <div>
-            <form className="text-textColor">
+            <form ref={form} onSubmit={sendEmail} className="text-textColor">
                 <div>
                     <label className="label font-semibold">Name:-</label>
                     <input type="text" name="name" required
