@@ -1,21 +1,30 @@
+import { useState } from "react";
 import Modal from "./Modal";
+import { TagsInput } from "react-tag-input-component";
 
 const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) => {
+    const [selected, setSelected] = useState([]);
+    const [keyFeatures, setKeyFeatures] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const projectName = form.projectName.value;
-        const technology = form.technology.value;
+        // const technology = form.technology.value;
+        const appPattern = form.appPattern.value;
+        const ArchitectureApproach = form.ArchitectureApproach.value;
         const description = form.description.value;
-        const keyFeatures = form.keyFeatures.value;
+        // const keyFeatures = form.keyFeatures.value;
         const githubLink = form.githubLink.value;
         const imageLink = form.imageLink.value;
         const project = {
-            projectName, technology, keyFeatures, description, githubLink, imageLink
+            projectName, technology: selected, keyFeatures: keyFeatures, description, ArchitectureApproach, pattern: appPattern, githubLink, imageLink
         }
         console.log(project);
+
         form.reset();
+        setSelected([]);
+        setKeyFeatures([]);
     };
 
     return (
@@ -24,7 +33,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
             isOpen={isOpen}
             setIsOpen={setIsOpen}
         >
-            <div className="w-full max-w-md mx-auto p-4">
+            <div className="w-full mx-auto p-4">
                 <form onSubmit={handleSubmit} className="bg-white rounded ">
                     <div className="mb-4">
                         <label htmlFor="projectName" className="block text-gray-700 text-sm font-bold mb-2">
@@ -38,7 +47,23 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             required
                         />
                     </div>
-                    <div className="mb-4">
+                    <div>
+                        <label htmlFor="projectName" className="block text-gray-700 text-sm font-bold mb-2">
+                            Technology
+                        </label>
+                        {
+                            selected.length !== 0 &&
+                            <pre>{JSON.stringify(selected)}</pre>
+                        }
+                        <TagsInput
+                            value={selected}
+                            onChange={setSelected}
+                            name="technologies"
+                            placeHolder="enter technology"
+                        />
+                        {/* <em>press enter or comma to add new tag</em> */}
+                    </div>
+                    {/* <div className="mb-4">
                         <label htmlFor="technology" className="block text-gray-700 text-sm font-bold mb-2">
                             Technology
                         </label>
@@ -49,18 +74,52 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             placeholder="Enter technology"
                             required
                         />
+                    </div> */}
+                    <div className="mb-4">
+                        <label htmlFor="appPattern" className="block text-gray-700 text-sm font-bold mb-2">
+                            Pattern
+                        </label>
+                        <textarea
+                            type="text"
+                            name="appPattern"
+                            className="shadow textarea appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                            placeholder="Enter project pattern"
+                            defaultValue={""}
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="ArchitectureApproach" className="block text-gray-700 text-sm font-bold mb-2">
+                            Architecture Approach
+                        </label>
+                        <textarea
+                            type="text"
+                            name="ArchitectureApproach"
+                            className="shadow textarea appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                            placeholder="Enter project architecture approach"
+                            defaultValue={""}
+                        />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="keyFeatures" className="block text-gray-700 text-sm font-bold mb-2">
                             key Features
                         </label>
-                        <textarea
+                        {
+                            selected.length !== 0 &&
+                            <pre>{JSON.stringify(selected)}</pre>
+                        }
+                        <TagsInput
+                            value={keyFeatures}
+                            onChange={setKeyFeatures}
+                            name="keyFeatures"
+                            placeHolder="enter technology"
+                        />
+                        {/* <textarea
                             type="text"
                             name="keyFeatures"
                             className="shadow textarea appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Enter project keyFeatures"
                             required
-                        />
+                        /> */}
                     </div>
                     <div className="mb-4">
                         <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
