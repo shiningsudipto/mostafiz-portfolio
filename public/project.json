@@ -1,0 +1,31 @@
+[
+    {
+        "projectName": "Task-Manager",
+        "technology": [
+            "Flutter",
+            "Rest Api",
+            "Shared Preference",
+            "Getx"
+        ],
+        "keyFeatures": [
+            "Simplifies task organization, allowing users to create, edit, and prioritize tasks.",
+            "Streamlines productivity with intuitive task categorization and deadline management.",
+            "Integrated Material UI for a clean user interface."
+        ],
+        "pattern": "",
+        "architectureApproach": "",
+        "description": "Designed a task management application with real-time synchronization, empowering users to efficiently organize their tasks and deadlines.",
+        "githubLink": "https://github.com/mostafejur21/task-manager-flutter/tree/getx",
+        "imageLink": "https://drive.google.com/file/d/14TmYj16lMXt4bf95gjT3q5y3Hyv6tOLF/view?usp=sharing"
+    },
+    {
+        "projectName": "",
+        "technology": [],
+        "keyFeatures": [],
+        "pattern": "",
+        "architectureApproach": "",
+        "description": "",
+        "githubLink": "",
+        "imageLink": ""
+    }
+]

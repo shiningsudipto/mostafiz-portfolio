@@ -1,4 +1,4 @@
-import baseApi from "./features/baseApi";
+import baseApi from "./features/api/baseApi";
 
 import { configureStore } from "@reduxjs/toolkit";
 

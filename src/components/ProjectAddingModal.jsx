@@ -1,10 +1,13 @@
 import { useState } from "react";
 import Modal from "./Modal";
 import { TagsInput } from "react-tag-input-component";
+import { useAddProjectMutation } from "../redux/features/projects/projectsApi";
 
 const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) => {
-    const [selected, setSelected] = useState([]);
-    const [keyFeatures, setKeyFeatures] = useState([]);
+    const [selectedTechnology, setSelectedTechnology] = useState([]); // Separate state for technology
+    const [selectedKeyFeatures, setSelectedKeyFeatures] = useState([]); // Separate state for key features
+
+    const [addProject, { data, error }] = useAddProjectMutation();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,19 +15,20 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
         const projectName = form.projectName.value;
         // const technology = form.technology.value;
         const appPattern = form.appPattern.value;
-        const ArchitectureApproach = form.ArchitectureApproach.value;
+        const architectureApproach = form.ArchitectureApproach.value;
         const description = form.description.value;
         // const keyFeatures = form.keyFeatures.value;
         const githubLink = form.githubLink.value;
         const imageLink = form.imageLink.value;
         const project = {
-            projectName, technology: selected, keyFeatures: keyFeatures, description, ArchitectureApproach, pattern: appPattern, githubLink, imageLink
+            projectName, technology: selectedTechnology, keyFeatures: selectedKeyFeatures, description, architectureApproach, pattern: appPattern, githubLink, imageLink
         }
         console.log(project);
+        addProject(project);
 
-        form.reset();
-        setSelected([]);
-        setKeyFeatures([]);
+        // form.reset();
+        // setSelected([]);
+        // setKeyFeatures([]);
     };
 
     return (
@@ -48,20 +52,19 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                         />
                     </div>
                     <div>
-                        <label htmlFor="projectName" className="block text-gray-700 text-sm font-bold mb-2">
+                        <label htmlFor="technology" className="block text-gray-700 text-sm font-bold mb-2">
                             Technology
                         </label>
                         {
-                            selected.length !== 0 &&
-                            <pre>{JSON.stringify(selected)}</pre>
+                            selectedTechnology.length !== 0 &&
+                            <pre>{JSON.stringify(selectedTechnology)}</pre>
                         }
                         <TagsInput
-                            value={selected}
-                            onChange={setSelected}
+                            value={selectedTechnology}
+                            onChange={setSelectedTechnology}
                             name="technologies"
                             placeHolder="enter technology"
                         />
-                        {/* <em>press enter or comma to add new tag</em> */}
                     </div>
                     {/* <div className="mb-4">
                         <label htmlFor="technology" className="block text-gray-700 text-sm font-bold mb-2">
@@ -93,7 +96,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                         </label>
                         <textarea
                             type="text"
-                            name="ArchitectureApproach"
+                            name="architectureApproach"
                             className="shadow textarea appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Enter project architecture approach"
                             defaultValue={""}
@@ -101,25 +104,18 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                     </div>
                     <div className="mb-4">
                         <label htmlFor="keyFeatures" className="block text-gray-700 text-sm font-bold mb-2">
-                            key Features
+                            Key Features
                         </label>
                         {
-                            selected.length !== 0 &&
-                            <pre>{JSON.stringify(selected)}</pre>
+                            selectedKeyFeatures.length !== 0 &&
+                            <pre>{JSON.stringify(selectedKeyFeatures)}</pre>
                         }
                         <TagsInput
-                            value={keyFeatures}
-                            onChange={setKeyFeatures}
+                            value={selectedKeyFeatures}
+                            onChange={setSelectedKeyFeatures}
                             name="keyFeatures"
-                            placeHolder="enter technology"
+                            placeHolder="enter key features"
                         />
-                        {/* <textarea
-                            type="text"
-                            name="keyFeatures"
-                            className="shadow textarea appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-                            placeholder="Enter project keyFeatures"
-                            required
-                        /> */}
                     </div>
                     <div className="mb-4">
                         <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
