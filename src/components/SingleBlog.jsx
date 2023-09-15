@@ -2,7 +2,7 @@
 const SingleBlog = ({ blog }) => {
     const { author, date, title, link, description, img } = blog;
     return (
-        <div className="bg-white card lg:w-[400px] rounded-3xl overflow-hidden">
+        <div className={`bg-white card lg:w-[400px] ${img < 1 && "lg:h-[300px]"} rounded-3xl overflow-hidden lg:m-0 my-4`}>
             <img src={img} className="w-full cardImage" alt="" />
             <div className="p-6">
                 <div className="flex justify-between">

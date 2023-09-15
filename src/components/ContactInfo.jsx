@@ -5,7 +5,7 @@ import { FiPhone } from "react-icons/fi";
 
 const ContactInfo = () => {
     return (
-        <div className="bg-secondaryColor py-14 px-10 rounded-3xl">
+        <div className="bg-secondaryColor w-full py-14 px-10 rounded-3xl">
             <div className="text-white space-y-6">
                 <div className="flex items-center contactInfo-details gap-6">
                     <MdOutlineLocationOn className="contactIcon w-16" />

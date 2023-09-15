@@ -10,11 +10,11 @@ const Contact = () => {
                     title={"Get in Touch"}
                     subTitle={"Any Question? Feel Free to COntact"}
                 ></SectionTitle>
-                <div className="grid grid-cols-3 gap-32">
+                <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-32 gap-10 lg:p-0 px-4">
                     <div>
                         <ContactInfo />
                     </div>
-                    <div className="col-span-2">
+                    <div className="lg:col-span-2">
                         <ContactForm />
                     </div>
                 </div>

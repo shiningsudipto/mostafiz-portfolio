@@ -9,12 +9,12 @@ const Banner = () => {
                 {/* Navbar */}
                 <NavigationBar />
 
-                <div className="grid grid-cols-2">
+                <div className="grid lg:grid-cols-2">
                     <div className="font-Josefin mt-12">
                         <div>
                             <h3 className="text-5xl text-titleColor font-semibold">Hello, I Am</h3>
                             {/* <h1 className="text-7xl text-secondaryColor font-semibold">Mostafejur Rahman</h1> */}
-                            <h1 className="text-[32px] text-secondaryColor font-semibold">
+                            <h1 className="text-[32px] h-[180px] text-secondaryColor font-semibold">
                                 <TypeAnimation
                                     sequence={[
                                         'Mostafejur Rahman',

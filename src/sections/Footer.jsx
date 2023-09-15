@@ -12,13 +12,13 @@ const Footer = () => {
                 <div className="">
                     {/* Logo-Brand */}
                     <h2 className="text-5xl font-semibold my-4">Fiz</h2>
-                    <div className="text-lg my-6">
-                        <Link className="mx-2 cursor-pointer footerMenu" to="home">Home</Link>|
-                        <Link className="mx-2 cursor-pointer footerMenu" to="services">Services</Link>|
-                        <Link className="mx-2 cursor-pointer footerMenu" to="about">About</Link>|
-                        <Link className="mx-2 cursor-pointer footerMenu" to="portfolio">Portfolio</Link>|
-                        <Link className="mx-2 cursor-pointer footerMenu" to="blog">Blog</Link>|
-                        <Link className="mx-2 cursor-pointer footerMenu" to="contact">Contact</Link>
+                    <div className="text-xl font-semibold my-6 lg:items-center lg:h-5 flex lg:flex-row flex-col justify-center">
+                        <Link className="me-2 lg:pr-2 lg:border-r cursor-pointer footerMenu" to="home">Home</Link>
+                        <Link className="me-2 lg:pr-2 lg:border-r cursor-pointer footerMenu" to="services">Services</Link>
+                        <Link className="me-2 lg:pr-2 lg:border-r cursor-pointer footerMenu" to="about">About</Link>
+                        <Link className="me-2 lg:pr-2 lg:border-r cursor-pointer footerMenu" to="portfolio">Portfolio</Link>
+                        <Link className="me-2 lg:pr-2 lg:border-r cursor-pointer footerMenu" to="blog">Blog</Link>
+                        <Link className="me-2 cursor-pointer footerMenu" to="contact">Contact</Link>
                     </div>
                     <div className="">
                         <Socials align={"flex justify-center my-5 space-x-4"} />

@@ -12,6 +12,7 @@ const BlogAddingModal = ({ isOpen, setIsOpen }) => {
     });
 
     const [addBlog, { data, error }] = useAddBlogMutation();
+    console.log(error)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,7 +25,7 @@ const BlogAddingModal = ({ isOpen, setIsOpen }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission here
-        console.log('Form Data:', formData);
+        // console.log('Form Data:', formData);
         addBlog(formData);
 
         setIsOpen(!isOpen);

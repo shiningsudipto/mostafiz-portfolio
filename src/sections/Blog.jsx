@@ -3,7 +3,10 @@ import img2 from "../assets/blog/blog-img-2.png"
 import img3 from "../assets/blog/blog-img-3.png"
 import SectionTitle from "../components/SectionTitle";
 import SingleBlog from "../components/SingleBlog";
+import { useGetBlogsQuery } from "../redux/features/blogs/blogsApi";
 const Blog = () => {
+
+    // const { data: blogs } = useGetBlogsQuery();
 
     const blogs = [
         {
@@ -11,7 +14,7 @@ const Blog = () => {
             date: 'Mar 8, 2023',
             title: 'Mastering UI Design in Flutter Apps',
             description: 'Learn how to create stunning user interfaces for your Flutter apps. This blog covers essential UI design principles, Flutter\'s powerful widget system, and tips for creating responsive layouts.',
-            img: img1,
+            img: '',
             link: 'link-to-blog-post-1'
         },
         {
@@ -40,9 +43,9 @@ const Blog = () => {
                     subTitle={"Blog & Articles"}
                 ></SectionTitle>
 
-                <div className="flex justify-evenly gap-10">
+                <div className="lg:flex lg:justify-evenly lg:gap-10 gap-6 lg:p-0 px-4">
                     {
-                        blogs.map(blog => <SingleBlog key={blog.title} blog={blog}></SingleBlog>)
+                        blogs?.map(blog => <SingleBlog key={blog.title} blog={blog}></SingleBlog>)
                     }
                 </div>
 
