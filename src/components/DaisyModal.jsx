@@ -36,12 +36,8 @@ const DaisyModal = ({ projectId }) => {
                                     <p>{data?.pattern}</p>
                                 </>
                             }
-
                         </div>
                     </div>
-
-
-
                     <div className="modal-action">
                         <label htmlFor="my_modal_6" className="btn">Close!</label>
                     </div>

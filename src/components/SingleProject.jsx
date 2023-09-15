@@ -4,10 +4,13 @@ const SingleProject = ({ project, setProjectId }) => {
     return (
         <>
             <div>
-                <img className="w-full projectImg hover:rounded-3xl" src={project?.imageLink} alt="" />
                 <label
+                    className="cursor-pointer"
+                    title="click for details"
                     onClick={() => setProjectId(project?._id)}
-                    htmlFor="my_modal_6" className="btn">open modal</label>
+                    htmlFor="my_modal_6">
+                    <img className="w-full projectImg hover:rounded-3xl" src={project?.imageLink} alt="" />
+                </label>
             </div>
         </>
     );

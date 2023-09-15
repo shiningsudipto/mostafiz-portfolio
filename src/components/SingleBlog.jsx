@@ -6,7 +6,7 @@ const SingleBlog = ({ blog }) => {
             <img src={img} className="w-full cardImage" alt="" />
             <div className="p-6">
                 <div className="flex justify-between">
-                    <p className="text-secondaryColor text-lg">{author}</p>
+                    <p className="text-secondaryColor text-lg">Mostafejur Rahman</p>
                     <p>{date}</p>
                 </div>
                 <h2 className="text-titleColor text-2xl text-textColor font-bold py-4 borderAnimation hover:text-primaryColor">{title}</h2>

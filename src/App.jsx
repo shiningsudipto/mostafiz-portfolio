@@ -14,7 +14,7 @@ function App() {
     <>
       <Banner />
       <Skills />
-      <TabSection />
+      {/* <TabSection /> */}
       <Projects />
       <Blog />
       <Contact />

@@ -1,3 +1,4 @@
+import { useAddBlogMutation } from "../redux/features/blogs/blogsApi";
 import Modal from "./Modal";
 import { useState } from 'react';
 
@@ -6,8 +7,11 @@ const BlogAddingModal = ({ isOpen, setIsOpen }) => {
         title: '',
         description: '',
         link: '',
-        imageLink: '',
+        img: '',
+        date: ''
     });
+
+    const [addBlog, { data, error }] = useAddBlogMutation();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,6 +25,8 @@ const BlogAddingModal = ({ isOpen, setIsOpen }) => {
         e.preventDefault();
         // Handle form submission here
         console.log('Form Data:', formData);
+        addBlog(formData);
+
         setIsOpen(!isOpen);
     };
 
@@ -67,6 +73,18 @@ const BlogAddingModal = ({ isOpen, setIsOpen }) => {
                                 onChange={handleChange}
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                                 placeholder="Enter link"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="date" className="block text-gray-600 text-sm font-medium mb-2">Date</label>
+                            <input
+                                type="text"
+                                id="date"
+                                name="date"
+                                value={formData.date}
+                                onChange={handleChange}
+                                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                placeholder="Enter date"
                             />
                         </div>
                         {/* Add the image link field */}
