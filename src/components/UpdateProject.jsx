@@ -1,39 +1,42 @@
-import { useState } from "react";
-import Modal from "./Modal";
 import { TagsInput } from "react-tag-input-component";
-import { useAddProjectMutation } from "../redux/features/projects/projectsApi";
+import Modal from "./Modal";
+import { useState } from "react";
+import { useUpdateProjectMutation } from "../redux/features/projects/projectsApi";
 
-const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) => {
-    const [selectedTechnology, setSelectedTechnology] = useState([]); // Separate state for technology
-    const [selectedKeyFeatures, setSelectedKeyFeatures] = useState([]); // Separate state for key features
+const UpdateProject = ({ isOpen, setIsOpen, data }) => {
+    const [selectedTechnology, setSelectedTechnology] = useState(data?.technology);
+    const [selectedKeyFeatures, setSelectedKeyFeatures] = useState(data?.keyFeatures);
 
-    const [addProject, { data, error }] = useAddProjectMutation();
+    const [UpdateProject, { error }] = useUpdateProjectMutation();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const projectName = form.projectName.value;
-        // const technology = form.technology.value;
         const appPattern = form.appPattern.value;
         const architectureApproach = form.architectureApproach.value;
         const description = form.description.value;
-        // const keyFeatures = form.keyFeatures.value;
         const githubLink = form.githubLink.value;
         const imageLink = form.imageLink.value;
         const project = {
             projectName, technology: selectedTechnology, keyFeatures: selectedKeyFeatures, description, architectureApproach, pattern: appPattern, githubLink, imageLink
         }
         console.log(project);
-        addProject(project);
 
-        form.reset();
-        setSelectedTechnology([]);
-        selectedKeyFeatures([]);
+        const updateProjectInfo = {
+            id: data?._id,
+            project,
+        }
+
+        UpdateProject(updateProjectInfo);
+        setIsOpen(!isOpen);
     };
+
+    console.log(error);
 
     return (
         <Modal
-            title={"Add A Project"}
+            title={`Update ${data?.projectName}`}
             isOpen={isOpen}
             setIsOpen={setIsOpen}
         >
@@ -44,6 +47,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             Project Name
                         </label>
                         <input
+                            defaultValue={data?.projectName}
                             type="text"
                             name="projectName"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
@@ -64,6 +68,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             onChange={setSelectedTechnology}
                             name="technologies"
                             placeHolder="enter technology"
+                            defaultValue={data?.technology}
                         />
                     </div>
 
@@ -76,7 +81,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             name="appPattern"
                             className="shadow textarea appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Enter project pattern"
-                            defaultValue={""}
+                            defaultValue={data?.appPattern}
                         />
                     </div>
                     <div className="mb-4">
@@ -88,7 +93,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             name="architectureApproach"
                             className="shadow textarea appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Enter project architecture approach"
-                            defaultValue={""}
+                            defaultValue={data?.architectureApproach}
                         />
                     </div>
                     <div className="mb-4">
@@ -104,6 +109,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             onChange={setSelectedKeyFeatures}
                             name="keyFeatures"
                             placeHolder="enter key features"
+                        // defaultValue={data?.keyFeatures}
                         />
                     </div>
                     <div className="mb-4">
@@ -115,6 +121,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             name="description"
                             className="shadow textarea appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Enter project description"
+                            defaultValue={data?.description}
                             required
                         />
                     </div>
@@ -127,6 +134,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             name="githubLink"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Enter Github link"
+                            defaultValue={data?.githubLink}
                             required
                         />
                     </div>
@@ -139,6 +147,7 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
                             name="imageLink"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
                             placeholder="Enter image link"
+                            defaultValue={data?.imageLink}
                             required
                         />
                     </div>
@@ -156,4 +165,4 @@ const ProjectAddingModal = ({ addProject: isOpen, setAddProject: setIsOpen }) =>
     );
 };
 
-export default ProjectAddingModal;
+export default UpdateProject;

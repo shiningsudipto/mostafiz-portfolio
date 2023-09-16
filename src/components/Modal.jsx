@@ -9,7 +9,6 @@ const Modal = ({ isOpen, setIsOpen, title, children }) => {
 
     return (
         <>
-
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child

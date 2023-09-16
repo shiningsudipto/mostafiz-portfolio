@@ -1,6 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import NavigationBar from "../components/NavigationBar";
 import Socials from "../components/Socials";
+import avatar from '../assets/fizz.png'
 
 const Banner = () => {
     return (
@@ -14,7 +15,7 @@ const Banner = () => {
                         <div>
                             <h3 className="text-5xl text-titleColor font-semibold">Hello, I Am</h3>
                             {/* <h1 className="text-7xl text-secondaryColor font-semibold">Mostafejur Rahman</h1> */}
-                            <h1 className="text-[32px] h-[180px] text-secondaryColor font-semibold">
+                            <h1 className="text-[32px] lg:h-auto h-[180px] text-secondaryColor font-semibold">
                                 <TypeAnimation
                                     sequence={[
                                         'Mostafejur Rahman',
@@ -37,7 +38,9 @@ const Banner = () => {
                         </div>
                         {/* <Socials align={"flex flex-col space-y-4"} /> */}
                     </div>
-                    <div></div>
+                    <div className="">
+                        <img className="h-[600px]" src={avatar} alt="" />
+                    </div>
                 </div>
             </div>
         </div>

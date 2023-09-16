@@ -12,10 +12,14 @@ const DaisyModal = ({ projectId }) => {
                     <div className="flex gap-6">
                         <div className="w-1/2">
                             <img src={data?.imageLink} className="w-full" alt="" /> <br />
-                            <a href={data?.githubLink} target="_blank" className="flex gap-2"><BsGithub className="text-2xl" />Github Link</a>
+                            <a href={data?.githubLink} rel="noopener noreferrer" target="_blank" className="flex gap-2"><BsGithub className="text-2xl" />Github Link</a>
                         </div>
                         <div>
                             <h2 className="text-3xl font-semibold">{data?.projectName}</h2>
+                            <h4 className="text-lg font-semibold">Technology:</h4>
+                            {data?.technology.map((tech, index) => (
+                                <li key={index}>{tech}</li>
+                            ))}
                             <h4 className="text-lg font-semibold">Key Features:</h4>
                             {data?.keyFeatures.map((feature, index) => (
                                 <li key={index}>{feature}</li>
@@ -32,7 +36,7 @@ const DaisyModal = ({ projectId }) => {
                             {
                                 data?.pattern?.length > 1 &&
                                 <>
-                                    <h4 className="text-lg font-semibold">Pattern:</h4>
+                                    <h4 className="text-lg font-semibold">Design Pattern:</h4>
                                     <p>{data?.pattern}</p>
                                 </>
                             }
