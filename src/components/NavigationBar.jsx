@@ -26,7 +26,7 @@ const NavigationBar = () => {
     }
 
     const navLinks = <>
-        <li> <Link to="#home">Home</Link> </li>
+        <li> <Link to="#home" activeClass="active" spy={true} smooth={true} offset={-30} duration={400}>Home</Link> </li>
         {
             adminEmail && (
                 <>
@@ -40,10 +40,11 @@ const NavigationBar = () => {
                 </>
             )
         }
-        <li> <Link to="#services">Services</Link> </li>
-        <li> <Link to="#about">About</Link> </li>
-        <li> <Link to="#portfolio">Portfolio</Link> </li>
-        <li> <Link to="#blog">Blog</Link> </li>
+        {/* <li> <Link to="#services">Services</Link> </li> */}
+        <li> <Link to="#about" activeClass="active" spy={true} smooth={true} offset={-30}>About</Link> </li>
+        <li> <Link to="#portfolio" activeClass="active" spy={true} smooth={true} offset={80}>Portfolio</Link> </li>
+        <li> <Link to="#blog" activeClass="active" spy={true} smooth={true} offset={80}>Blog</Link> </li>
+        <li> <Link to="#contact" activeClass="active" spy={true} smooth={true} offset={80}>Contact</Link> </li>
     </>
 
     return (
@@ -57,7 +58,7 @@ const NavigationBar = () => {
                 setAddProject={setAddProject}
             ></ProjectAddingModal>
             <div className="">
-                <div className="navbar pt-5">
+                <div className="navbar lg:w-[1280px] w-[390px] pt-5 fixed backdrop-blur-md z-10">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">

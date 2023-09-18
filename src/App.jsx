@@ -12,13 +12,14 @@ function App() {
 
   return (
     <>
-      <Banner />
-      <Skills />
-      {/* <TabSection /> */}
-      <Projects />
-      <Blog />
-      <Contact />
-      <Footer />
+      <div className='max-w-[1920px] mx-auto'>
+        <Banner />
+        <Skills />
+        <Projects />
+        <Blog />
+        <Contact />
+        <Footer />
+      </div>
     </>
   )
 }

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.active{
+  background-color: #6F34FE !important;
+  color: #ffff !important;
+}
+
 /* primary button */
 .primaryBtn{
     @apply bg-primaryColor text-white font-Josefin py-3 px-10 text-lg rounded-full font-semibold hover:-translate-y-1 hover:bg-secondaryColor;
@@ -97,3 +102,13 @@
     height: 100%;
   }
   
+
+  @media all and (max-width: 480px) {
+    .profile-image-container {
+      margin-top: 30px !important;
+      width: 360px;
+      height: 360px;
+      margin: 0px auto;
+      vertical-align: middle;
+    }
+  }

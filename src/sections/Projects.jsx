@@ -14,7 +14,7 @@ const Projects = () => {
     }
 
     return (
-        <div className="bg-white py-20">
+        <div id="#portfolio" className="bg-white py-20">
             <div className="container mx-auto">
 
                 <SectionTitle

@@ -1,7 +1,7 @@
 import Progress from 'react-circle-progress-bar'
 const Skills = () => {
     return (
-        <div className="bg-[#ECF7FF] py-20">
+        <div id='#about' className="bg-[#ECF7FF] py-20">
             <div className="container mx-auto">
                 {/* lg:grid lg:grid-cols-3 grid grid-cols-1 gap-4 */}
                 <div className="flex lg:flex-row flex-col-reverse gap-4">

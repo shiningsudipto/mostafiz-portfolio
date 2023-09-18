@@ -5,12 +5,12 @@ import avatar from '../assets/mf.png'
 
 const Banner = () => {
     return (
-        <div className="bg-[#EFF6FF] h-screen">
+        <div id="#home" className="bg-[#EFF6FF] h-screen">
             <div className="container mx-auto">
                 {/* Navbar */}
                 <NavigationBar />
 
-                <div className="grid lg:grid-cols-2 lg:px-0 px-4">
+                <div className="grid lg:grid-cols-2 lg:px-0 px-4 lg:pt-36 pt-16 w-[390px]">
                     <div className="font-Josefin mt-12">
                         <div className="">
                             <h3 className="lg:text-5xl text-2xl text-titleColor font-semibold">Hello, I Am</h3>

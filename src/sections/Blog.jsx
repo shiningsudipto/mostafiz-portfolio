@@ -36,7 +36,7 @@ const Blog = () => {
     // ]
 
     return (
-        <div className="bg-[#F2F2FF] py-20">
+        <div id="#blog" className="bg-[#F2F2FF] py-20">
             <div className="container mx-auto">
                 <SectionTitle
                     title={"Latest News"}
