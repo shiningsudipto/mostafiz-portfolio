@@ -7,8 +7,11 @@ import SectionTitle from "../components/SectionTitle";
 const Projects = () => {
     const [projectId, setProjectId] = useState('');
     console.log(projectId)
-    const { data } = useGetProjectsQuery();
-    console.log(data)
+    const { data, isLoading } = useGetProjectsQuery();
+    // console.log(data);
+    if (isLoading) {
+        <span className="loading loading-infinity loading-lg"></span>
+    }
 
     return (
         <div className="bg-white py-20">

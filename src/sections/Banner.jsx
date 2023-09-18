@@ -1,7 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import NavigationBar from "../components/NavigationBar";
 import Socials from "../components/Socials";
-import avatar from '../assets/fizz.png'
+import avatar from '../assets/mf.png'
 
 const Banner = () => {
     return (
@@ -10,12 +10,12 @@ const Banner = () => {
                 {/* Navbar */}
                 <NavigationBar />
 
-                <div className="grid lg:grid-cols-2">
+                <div className="grid lg:grid-cols-2 lg:px-0 px-4">
                     <div className="font-Josefin mt-12">
-                        <div>
-                            <h3 className="text-5xl text-titleColor font-semibold">Hello, I Am</h3>
+                        <div className="">
+                            <h3 className="lg:text-5xl text-2xl text-titleColor font-semibold">Hello, I Am</h3>
                             {/* <h1 className="text-7xl text-secondaryColor font-semibold">Mostafejur Rahman</h1> */}
-                            <h1 className="text-[32px] lg:h-auto h-[180px] text-secondaryColor font-semibold">
+                            <h1 className="lg:text-[32px] text-[18px] lg:h-auto h-[80px] text-secondaryColor font-semibold">
                                 <TypeAnimation
                                     sequence={[
                                         'Mostafejur Rahman',
@@ -34,12 +34,17 @@ const Banner = () => {
                         </div>
                         <div className="flex items-center gap-8 text-titleColor">
                             <button className="primaryBtn">Hire ME</button>
-                            <p className="border-transition text-primaryColor hover:text-secondaryColor font-semibold text-lg">See My Work</p>
+                            <p className="border-secondaryColor border-transition text-secondaryColor hover:text-primaryColor font-semibold text-lg">See My Work</p>
                         </div>
                         {/* <Socials align={"flex flex-col space-y-4"} /> */}
                     </div>
                     <div className="">
-                        <img className="h-[600px]" src={avatar} alt="" />
+
+                        <div className="content-container">
+                            <div className="profile-image-container">
+                                <img className="h-[500px]" src={avatar} alt="" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

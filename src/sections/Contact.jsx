@@ -8,7 +8,7 @@ const Contact = () => {
             <div className="container mx-auto ">
                 <SectionTitle
                     title={"Get in Touch"}
-                    subTitle={"Any Question? Feel Free to COntact"}
+                    subTitle={"Any Question? Feel Free to Contact"}
                 ></SectionTitle>
                 <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-32 gap-10 lg:p-0 px-4">
                     <div>
