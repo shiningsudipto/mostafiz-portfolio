@@ -11,8 +11,9 @@ const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
     console.log(user)
     const userEmail = user?.email;
-    const adminEmail = userEmail === import.meta.env.VITE_ADMINEMAIL1 && import.meta.env.VITE_ADMINEMAIL2;
-    console.log(adminEmail);
+
+    const adminEmail = import.meta.env.VITE_ADMINEMAIL2;
+    console.log(adminEmail)
 
     const handleLogOut = () => {
         logOut()
@@ -28,17 +29,16 @@ const NavigationBar = () => {
     const navLinks = <>
         <li> <Link to="#home" activeClass="active" spy={true} smooth={true} offset={-30} duration={400}>Home</Link> </li>
         {
-            adminEmail && (
-                <>
-                    <li onClick={() => setIsOpen(!isOpen)}>
-                        <p>Add Blog</p>
-                    </li>
-                    <li onClick={() => setAddProject(!addProject)}>
-                        <p>Add Project</p>
-                    </li>
-                    <li onClick={handleLogOut}> <p>Logout</p> </li>
-                </>
-            )
+            userEmail == adminEmail &&
+            <>
+                <li onClick={() => setIsOpen(!isOpen)}>
+                    <p>Add Blog</p>
+                </li>
+                <li onClick={() => setAddProject(!addProject)}>
+                    <p>Add Project</p>
+                </li>
+                <li onClick={handleLogOut}> <p>Logout</p> </li>
+            </>
         }
         {/* <li> <Link to="#services">Services</Link> </li> */}
         <li> <Link to="#about" activeClass="active" spy={true} smooth={true} offset={-30}>About</Link> </li>
@@ -58,7 +58,7 @@ const NavigationBar = () => {
                 setAddProject={setAddProject}
             ></ProjectAddingModal>
             <div className="">
-                <div className="navbar lg:w-[] pe-20 pt-5 fixed backdrop-blur-md z-10">
+                <div className="navbar pt-5">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -4,6 +4,10 @@ import Socials from "../components/Socials";
 import avatar from '../assets/mf.png'
 import { Link } from "react-scroll";
 
+import flutter from "../assets/flutter.png"
+import android from "../assets/android.png"
+import git from "../assets/git.png"
+
 const Banner = () => {
     return (
         <div id="#home" className="bg-[#EFF6FF] h-screen">
@@ -11,7 +15,7 @@ const Banner = () => {
                 {/* Navbar */}
                 <NavigationBar />
 
-                <div className="grid lg:grid-cols-2 lg:px-0 px-4 lg:pt-36 pt-16 lg:w-auto w-[390px]">
+                <div className="grid lg:grid-cols-2 lg:px-0 px-4 lg:w-auto w-[390px]">
                     <div className="font-Josefin mt-12 ">
                         <div className="">
                             <h3 className="lg:text-5xl text-2xl text-titleColor font-semibold">Hello, I Am</h3>
@@ -44,12 +48,16 @@ const Banner = () => {
                     </div>
                     <div className="">
                         <div className="content-container">
-                            <div className="profile-image-container">
-                                <img className="h-[500px]" src={avatar} alt="" />
+                            <div className="profile-image-container relative">
+                                <img className="h-[500px] avatarImg" src={avatar} alt="" />
+                                <img className="absolute top-0 lg:h-16 h-12 floatingImage " src={flutter} alt="" />
+                                <img className="absolute right-0 lg:h-16 h-12 floatingImage  mt-[-250px]" src={android} alt="" />
+                                <img className="absolute bottom-6 lg:h-16 h-12 floatingImage" src={git} alt="" />
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* <Link className=" bg-black p-10" to="#home">YO</Link> */}
             </div>
         </div>
     );

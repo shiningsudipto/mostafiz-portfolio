@@ -2,6 +2,8 @@ import { TagsInput } from "react-tag-input-component";
 import Modal from "./Modal";
 import { useState } from "react";
 import { useUpdateProjectMutation } from "../redux/features/projects/projectsApi";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const UpdateProject = ({ isOpen, setIsOpen, data }) => {
     const [selectedTechnology, setSelectedTechnology] = useState(data?.technology);
@@ -21,7 +23,7 @@ const UpdateProject = ({ isOpen, setIsOpen, data }) => {
         const project = {
             projectName, technology: selectedTechnology, keyFeatures: selectedKeyFeatures, description, architectureApproach, pattern: appPattern, githubLink, imageLink
         }
-        console.log(project);
+        // console.log(project);
 
         const updateProjectInfo = {
             id: data?._id,

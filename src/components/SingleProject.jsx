@@ -8,9 +8,9 @@ const SingleProject = ({ project, setProjectId }) => {
     let [isOpen, setIsOpen] = useState(false);
 
     const { user } = useContext(AuthContext);
-    console.log(user)
+    // console.log(user)
     const userEmail = user?.email;
-    const adminEmail = userEmail === import.meta.env.VITE_ADMINEMAIL1 && import.meta.env.VITE_ADMINEMAIL2;
+    const adminEmail = userEmail == import.meta.env.VITE_ADMINEMAIL2;
 
     return (
         <>
