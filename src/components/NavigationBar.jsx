@@ -58,7 +58,7 @@ const NavigationBar = () => {
                 setAddProject={setAddProject}
             ></ProjectAddingModal>
             <div className="">
-                <div className="navbar lg:w-[1280px] w-[390px] pt-5 fixed backdrop-blur-md z-10">
+                <div className="navbar lg:w-[] pe-20 pt-5 fixed backdrop-blur-md z-10">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">
