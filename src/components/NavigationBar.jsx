@@ -44,7 +44,7 @@ const NavigationBar = () => {
         <li> <Link to="#about" activeClass="active" spy={true} smooth={true} offset={-30}>About</Link> </li>
         <li> <Link to="#portfolio" activeClass="active" spy={true} smooth={true} offset={80}>Portfolio</Link> </li>
         <li> <Link to="#blog" activeClass="active" spy={true} smooth={true} offset={80}>Blog</Link> </li>
-        <li> <Link to="#contact" activeClass="active" spy={true} smooth={true} offset={80}>Contact</Link> </li>
+        {/* <li> <Link to="#contact" activeClass="active" spy={true} smooth={true} offset={80}>Contact</Link> </li> */}
     </>
 
     return (
@@ -77,7 +77,7 @@ const NavigationBar = () => {
                                 {navLinks}
                             </ul>
                         </div>
-                        <button className="primaryBtn ms-2">Contact</button>
+                        <Link to="#contact" activeClass="active" spy={true} smooth={true} offset={80} className="primaryBtn ms-2">Contact</Link>
                     </div>
                 </div>
             </div>

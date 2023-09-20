@@ -1,7 +1,7 @@
 import { FaLinkedinIn, FaGithub, FaFacebook } from "react-icons/fa";
 const Socials = ({ align }) => {
     return (
-        <div className={`${align}`}>
+        <div className={`${align} ${!align && "flex space-x-3 mb-6"}`}>
             <a href="" className="bg-white p-2 rounded-full w-[40px]">
                 <FaGithub className="text-2xl cursor-pointer text-black" />
             </a>

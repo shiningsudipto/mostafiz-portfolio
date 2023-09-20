@@ -26,6 +26,7 @@
 
 .contactIcon{
     @apply bg-primaryColor p-2 rounded-full text-5xl;
+    width: 50px;
 }
 .contactInfo-details:hover .contactIcon{
    background-color: #6F34FE; 

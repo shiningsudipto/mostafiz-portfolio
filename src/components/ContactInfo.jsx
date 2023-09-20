@@ -11,23 +11,25 @@ const ContactInfo = () => {
                     <MdOutlineLocationOn className="contactIcon w-16 border-2 border-transparent" />
                     <div>
                         <h4 className="text-xl font-bold font-Josefin">Address:</h4>
-                        <p>121 King Street Melbourne, 3000, Australia</p>
+                        <p>Uttara, Dhaka, Bangladesh.</p>
                     </div>
                 </div>
                 <div className="flex items-center contactInfo-details gap-6">
-                    <AiOutlineMail className="contactIcon" />
                     <div>
-                        <h4 className="text-xl font-bold font-Josefin">Email:</h4>
-                        <p>Info@folioflix.com</p>
+                        <AiOutlineMail className="contactIcon" />
+                    </div>
+                    <div>
+                        <h4 className=" text-xl font-bold font-Josefin">Email:</h4>
+                        <p>info.mostafejur21@gmail.com</p>
                     </div>
                 </div>
                 <div className="flex items-center contactInfo-details gap-6">
                     <FiPhone className="contactIcon" />
                     <div>
                         <h4 className="text-xl font-bold font-Josefin">Phone:</h4>
-                        <p>+61 3 8376 6284</p>
+                        <p>+880 1828-649383</p>
                         <h4 className="text-xl font-bold font-Josefin">WhatsApp:</h4>
-                        <p>+800 2345 6789</p>
+                        <p>+880 1828-649383</p>
                     </div>
                 </div>
 
