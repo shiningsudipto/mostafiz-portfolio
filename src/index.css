@@ -130,3 +130,36 @@
       transition: ease 0.5s;
     }
   }
+
+  /*------------------------------
+           Back to top
+------------------------------*/
+.backtotop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: block;
+  cursor: pointer;
+  transition: all .2s linear;
+  width: 50px;
+  height: 50px;
+  background-color: #FF9800;
+  border-radius: 50%;
+  box-shadow: 1px 1px 15px -3px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backtotop:hover{
+  background-color: #6F34FE;
+}
+
+.backtotop div {
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 6px;
+  transform: rotate(-135deg);
+}
